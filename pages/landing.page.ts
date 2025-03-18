@@ -1,6 +1,8 @@
 import { expect, Page } from '@playwright/test';
 import { landing_page_aria_snapshot } from '../fixtures/snapshots/landing-page';
 
+const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
+
 export class LandingPage {
   private headerNavigation = this.page.getByRole('banner');
   private main = this.page.getByRole('main');
@@ -13,7 +15,7 @@ export class LandingPage {
     await this.page.goto('/');
   }
 
-  async shouldHaveHeaderNavigation(): Promise<boolean> {
+  async verifyPageLoaded(): Promise<boolean> {
     return await this.headerNavigation.isVisible();
   }
 
@@ -22,6 +24,8 @@ export class LandingPage {
   }
 
   async navigateToLeadershipPage(): Promise<void> {
+    await this.aboutUs.waitFor(ELEMENT_TIMEOUT);
+
     await this.aboutUs.click();
     await this.leadershipLink.click();
   }

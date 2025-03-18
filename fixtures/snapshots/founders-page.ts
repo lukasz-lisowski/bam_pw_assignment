@@ -1,0 +1,11 @@
+export const founders_page_aria_snapshot = `
+  - text: Founders
+- link "Leadership Headshot Dmitry Balyasny Managing Partner & Chief Investment Officer":
+  - img "Leadership Headshot"
+  - text: Dmitry Balyasny Managing Partner & Chief Investment Officer
+- link "Leadership Headshot Taylor O'Malley Co-Founding Partner & President":
+  - img "Leadership Headshot"
+  - text: Taylor O'Malley Co-Founding Partner & President
+- link "Leadership Headshot Scott Schroeder Co-Founding Partner":
+  - img "Leadership Headshot"
+  - text: Scott Schroeder Co-Founding Partner`;
