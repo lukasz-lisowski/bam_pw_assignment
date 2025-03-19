@@ -9,6 +9,7 @@ export class LandingPage {
   private aboutUs = this.page.getByLabel('Header').getByRole('link', { name: 'About Us' });
   private leadershipLink = this.page.getByLabel('Header').getByRole('link', { name: 'Leadership' });
   private cookieConsentBanner = this.page.getByRole('button', { name: 'Accept cookies' });
+  private contactUs = this.page.getByRole('link', { name: 'Contact Us', exact: true });
 
   constructor(protected page: Page) {}
 
@@ -34,5 +35,9 @@ export class LandingPage {
     await this.aboutUs.hover().then(async () => {
       await this.leadershipLink.click();
     });
+  }
+
+  async navigateToContactUsPage(): Promise<void> {
+    await this.contactUs.click();
   }
 }

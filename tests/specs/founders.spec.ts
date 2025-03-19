@@ -1,4 +1,4 @@
-import { expect, test } from '../../fixtures/base';
+import { test } from '../fixtures/base';
 
 test.describe('founders page', () => {
   test('should find founders on Leadership page', async ({ landingPage, leadershipPage }) => {
