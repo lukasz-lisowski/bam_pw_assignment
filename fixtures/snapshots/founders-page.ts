@@ -1,5 +1,5 @@
 export const founders_page_aria_snapshot = `
-  - text: Founders
+- text: Founders
 - link "Leadership Headshot Dmitry Balyasny Managing Partner & Chief Investment Officer":
   - img "Leadership Headshot"
   - text: Dmitry Balyasny Managing Partner & Chief Investment Officer

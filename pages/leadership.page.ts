@@ -4,13 +4,13 @@ import { founders_page_aria_snapshot } from '../fixtures/snapshots/founders-page
 const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
 
 export class LeadershipPage {
-  private header = this.page.getByRole('heading', { name: 'Our leadership team' });
-  private founders = this.page.getByText('FoundersDmitry');
-
   constructor(protected page: Page) {}
 
-  async verifyPageLoaded(): Promise<boolean> {
-    return await this.header.isVisible(ELEMENT_TIMEOUT);
+  private header = this.page.locator('#gsap-hero-eyebrow');
+  private founders = this.page.getByText('FoundersDmitry');
+
+  async verifyPageLoaded(): Promise<void> {
+    await expect(this.header).toBeVisible(ELEMENT_TIMEOUT);
   }
 
   async verifyFoundersVisible(): Promise<void> {

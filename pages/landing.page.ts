@@ -8,11 +8,16 @@ export class LandingPage {
   private main = this.page.getByRole('main');
   private aboutUs = this.page.getByLabel('Header').getByRole('link', { name: 'About Us' });
   private leadershipLink = this.page.getByLabel('Header').getByRole('link', { name: 'Leadership' });
+  private cookieConsentBanner = this.page.getByRole('button', { name: 'Accept cookies' });
 
   constructor(protected page: Page) {}
 
   async open() {
     await this.page.goto('/');
+  }
+
+  async dismissCookieBanner(): Promise<void> {
+    await this.cookieConsentBanner.click();
   }
 
   async verifyPageLoaded(): Promise<boolean> {
@@ -26,7 +31,8 @@ export class LandingPage {
   async navigateToLeadershipPage(): Promise<void> {
     await this.aboutUs.waitFor(ELEMENT_TIMEOUT);
 
-    await this.aboutUs.click();
-    await this.leadershipLink.click();
+    await this.aboutUs.hover().then(async () => {
+      await this.leadershipLink.click();
+    });
   }
 }

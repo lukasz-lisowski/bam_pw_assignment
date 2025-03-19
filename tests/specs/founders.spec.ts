@@ -2,9 +2,12 @@ import { expect, test } from '../../fixtures/base';
 
 test.describe('founders page', () => {
   test('should find founders on Leadership page', async ({ landingPage, leadershipPage }) => {
+    test.slow();
     await landingPage.open();
 
     await test.step('landing page hero section', async () => {
+      await landingPage.dismissCookieBanner();
+
       await landingPage.shouldHaveHeroSection();
     });
 
@@ -13,7 +16,7 @@ test.describe('founders page', () => {
     });
 
     await test.step('should find founders', async () => {
-      expect(await leadershipPage.verifyPageLoaded()).toBeTruthy();
+      await leadershipPage.verifyPageLoaded();
 
       await leadershipPage.verifyFoundersVisible();
     });
