@@ -1,32 +1,7 @@
-import { Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { ContactUsForm } from '../types/types';
 
-const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
-
-const data_positive: ContactUsForm[] = [
-  {
-    firstName: '',
-    lastName: '',
-    emailAddress: '',
-    company: 'Test Company',
-    phoneNumber: '123-456-7890',
-    topic: 'info',
-  },
-];
-
-const data_negative: ContactUsForm[] = [
-  {
-    topic: 'info',
-  },
-  {
-    firstName: 'Jane',
-    lastName: 'Doe',
-    emailAddress: '',
-    company: 'Test Company',
-    phoneNumber: '123-456-7890',
-    topic: 'pr',
-  },
-];
+export const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
 
 export class ContactUsPage {
   private headerSection = this.page.getByRole('heading', { name: 'Get in touch' });
@@ -36,19 +11,35 @@ export class ContactUsPage {
   private emailAddressField = this.page.getByRole('textbox', { name: 'E-mail Address*' });
   private phoneNumberField = this.page.getByRole('textbox', { name: 'Phone Number' });
   private topicDropdown = this.page.getByLabel('Topic');
+  private submitButton = this.page.getByRole('button', { name: 'Submit' });
+  private errorMessage = this.page
+    .locator('div')
+    .filter({ hasText: /^.*.This field is required$/ })
+    .getByRole('paragraph');
 
   constructor(protected page: Page) {}
 
   async verifyPageLoaded(): Promise<void> {
     await this.headerSection.isVisible(ELEMENT_TIMEOUT);
+    await this.firstNameField.isVisible(ELEMENT_TIMEOUT);
   }
 
   async fillOutForm(data: ContactUsForm): Promise<void> {
+    await this.firstNameField.isVisible(ELEMENT_TIMEOUT);
     await this.firstNameField.fill(data.firstName);
     await this.lastNameField.fill(data.lastName);
     await this.companyField.fill(data.company);
     await this.emailAddressField.fill(data.emailAddress);
     await this.phoneNumberField.fill(data.phoneNumber);
-    await this.topicDropdown.selectOption({ label: data.topic });
+    await this.topicDropdown.click();
+    await this.topicDropdown.selectOption(data.topic);
+  }
+
+  async submitForm(): Promise<void> {
+    await this.submitButton.click();
+  }
+
+  async errorMessageVisible(): Promise<boolean> {
+    return await this.errorMessage.isVisible(ELEMENT_TIMEOUT);
   }
 }
