@@ -1,6 +1,16 @@
 import { expect, test } from '../fixtures/base';
 import { ContactUsForm } from '../types/types';
 
+const data_wrong_email: ContactUsForm = {
+  firstName: 'Jane',
+  lastName: 'Doe',
+  emailAddress: 'testemail.com',
+  company: 'Test Company',
+  phoneNumber: '123-456-7890',
+  topic: 'pr',
+  message: 'This is a test message',
+};
+
 const data_negative: ContactUsForm[] = [
   {
     firstName: '',
@@ -52,6 +62,17 @@ test.describe('contact us form', () => {
 
     await test.step('navigate to Contact Us', async () => {
       await landingPage.navigateToContactUsPage();
+    });
+
+    await test.step('should fail with wrong email format', async () => {
+      await contactUsPage.verifyPageLoaded();
+
+      await contactUsPage.fillOutForm(data_wrong_email);
+      await contactUsPage.submitForm();
+
+      expect(await contactUsPage.emailFieldValid()).toBeFalsy();
+
+      await contactUsPage.refreshPage();
     });
 
     await test.step('should fail without required fields', async () => {

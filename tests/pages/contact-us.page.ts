@@ -51,9 +51,22 @@ export class ContactUsPage {
 
   async errorMessageVisible(): Promise<void> {
     expect((await this.errorMessage.count()) > 0).toBeTruthy();
+    expect((await this.errorMessage.count()) > 0).toBeTruthy();
   }
 
   async refreshPage(): Promise<void> {
     await this.page.reload();
+  }
+
+  async emailFieldValid(): Promise<boolean> {
+    const emailValidity = await this.emailAddressField.evaluate((el: HTMLInputElement) => {
+      return {
+        valid: el.validity.valid,
+        valueMissing: el.validity.valueMissing,
+        typeMismatch: el.validity.typeMismatch,
+      };
+    });
+
+    return emailValidity.valid;
   }
 }
