@@ -46,6 +46,12 @@ npx playwright show-report
 - **Expected result:** result matches structure and content of baseline aria snapshot
 - **Spec file:** `locations.spec.ts`
 
+### 2. Business Infrastructure scenario
+
+- **Test steps:** Navigate to "Business Infrastructure" page
+- **Expected result:** result matches structure and content of baseline aria snapshot
+- **Spec file:** `business-infrastructure.spec.ts`
+
 ## Solution
 
 - This project file runs tests against browser engines:
