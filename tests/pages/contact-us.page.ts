@@ -1,23 +1,33 @@
-import { Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 import { ContactUsForm } from '../types/types';
 
 export const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
 
 export class ContactUsPage {
-  private headerSection = this.page.getByRole('heading', { name: 'Get in touch' });
-  private firstNameField = this.page.getByRole('textbox', { name: 'First Name*' });
-  private lastNameField = this.page.getByRole('textbox', { name: 'Last Name*' });
-  private companyField = this.page.getByRole('textbox', { name: 'Company/School Name' });
-  private emailAddressField = this.page.getByRole('textbox', { name: 'E-mail Address*' });
-  private phoneNumberField = this.page.getByRole('textbox', { name: 'Phone Number' });
-  private topicDropdown = this.page.getByLabel('Topic');
-  private submitButton = this.page.getByRole('button', { name: 'Submit' });
-  private errorMessage = this.page
-    .locator('div')
-    .filter({ hasText: /^.*.This field is required$/ })
-    .getByRole('paragraph');
+  readonly headerSection: Locator;
+  readonly firstNameField: Locator;
+  readonly lastNameField: Locator;
+  readonly companyField: Locator;
+  readonly emailAddressField: Locator;
+  readonly phoneNumberField: Locator;
+  readonly topicDropdown: Locator;
+  readonly submitButton: Locator;
+  readonly errorMessage: Locator;
 
-  constructor(protected page: Page) {}
+  constructor(protected page: Page) {
+    this.headerSection = this.page.getByRole('heading', { name: 'Get in touch' });
+    this.firstNameField = this.page.getByRole('textbox', { name: 'First Name*' });
+    this.lastNameField = this.page.getByRole('textbox', { name: 'Last Name*' });
+    this.companyField = this.page.getByRole('textbox', { name: 'Company/School Name' });
+    this.emailAddressField = this.page.getByRole('textbox', { name: 'E-mail Address*' });
+    this.phoneNumberField = this.page.getByRole('textbox', { name: 'Phone Number' });
+    this.topicDropdown = this.page.getByLabel('Topic');
+    this.submitButton = this.page.getByRole('button', { name: 'Submit' });
+    this.errorMessage = this.page
+      .locator('div')
+      .filter({ hasText: /^.*.This field is required$/ })
+      .getByRole('paragraph');
+  }
 
   async verifyPageLoaded(): Promise<void> {
     await this.headerSection.isVisible(ELEMENT_TIMEOUT);

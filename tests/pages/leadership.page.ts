@@ -1,13 +1,16 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { founders_page_aria_snapshot } from '../fixtures/snapshots/founders-page';
 
 const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
 
 export class LeadershipPage {
-  private header = this.page.locator('#gsap-hero-eyebrow');
-  private founders = this.page.getByText('FoundersDmitry');
+  readonly header: Locator;
+  readonly founders: Locator;
 
-  constructor(protected page: Page) {}
+  constructor(protected page: Page) {
+    this.header = this.page.locator('#gsap-hero-eyebrow');
+    this.founders = this.page.getByText('FoundersDmitry');
+  }
 
   async verifyPageLoaded(): Promise<void> {
     await expect(this.header).toBeVisible(ELEMENT_TIMEOUT);

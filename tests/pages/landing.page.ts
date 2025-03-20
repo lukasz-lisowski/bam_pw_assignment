@@ -1,17 +1,24 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { landing_page_aria_snapshot } from '../fixtures/snapshots/landing-page';
 
 const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
 
 export class LandingPage {
-  private headerNavigation = this.page.getByRole('banner');
-  private main = this.page.getByRole('main');
-  private aboutUs = this.page.getByLabel('Header').getByRole('link', { name: 'About Us' });
-  private leadershipLink = this.page.getByLabel('Header').getByRole('link', { name: 'Leadership' });
-  private cookieConsentBanner = this.page.getByRole('button', { name: 'Accept cookies' });
-  private contactUs = this.page.getByRole('link', { name: 'Contact Us', exact: true });
+  readonly headerNavigation: Locator;
+  readonly main: Locator;
+  readonly aboutUs: Locator;
+  readonly leadershipLink: Locator;
+  readonly cookieConsentBanner: Locator;
+  readonly contactUs: Locator;
 
-  constructor(protected page: Page) {}
+  constructor(protected page: Page) {
+    this.headerNavigation = this.page.getByRole('banner');
+    this.main = this.page.getByRole('main');
+    this.aboutUs = this.page.getByLabel('Header').getByRole('link', { name: 'About Us' });
+    this.leadershipLink = this.page.getByLabel('Header').getByRole('link', { name: 'Leadership' });
+    this.cookieConsentBanner = this.page.getByRole('button', { name: 'Accept cookies' });
+    this.contactUs = this.page.getByRole('link', { name: 'Contact Us', exact: true });
+  }
 
   async open() {
     await this.page.goto('/');
