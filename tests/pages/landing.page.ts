@@ -1,8 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { landing_page_aria_snapshot } from '../fixtures/snapshots/landing-page';
 
-const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
-
 export class LandingPage {
   readonly headerNavigation: Locator;
   readonly main: Locator;
@@ -30,12 +28,12 @@ export class LandingPage {
     await this.cookieConsentBanner.click();
   }
 
-  async verifyPageLoaded(): Promise<boolean> {
-    return await this.headerNavigation.isVisible();
+  async verifyPageLoaded(): Promise<void> {
+    await this.headerNavigation.isVisible();
   }
 
   async shouldHaveHeroSection(): Promise<void> {
-    return await expect(this.main).toMatchAriaSnapshot(landing_page_aria_snapshot);
+    await expect(this.main).toMatchAriaSnapshot(landing_page_aria_snapshot);
   }
 
   async navigateToLeadershipPage(): Promise<void> {

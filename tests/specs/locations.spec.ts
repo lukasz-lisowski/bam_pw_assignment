@@ -15,6 +15,8 @@ test.describe('locations page', () => {
     });
 
     await test.step('should find locations', async () => {
+      expect(locationsPage.verifyPageLoaded()).toBeTruthy();
+
       await locationsPage.shouldHaveAllLocations();
     });
   });

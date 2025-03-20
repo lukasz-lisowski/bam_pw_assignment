@@ -1,8 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { locations_page_aria_snapshot } from '../fixtures/snapshots/locations-page';
 
-const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
-
 export class LocationsPage {
   readonly locationsHeader: Locator;
   readonly locationsSection: Locator;

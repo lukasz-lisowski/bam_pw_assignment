@@ -81,3 +81,7 @@ tests/
 - `pages` - contains page objects.
 - `specs` - contains test scenarios.
 - `types` - contains custom types (in this case only data for _Contact Us_ form).
+
+## HTML Report location
+
+`playwright-report/index.html`
