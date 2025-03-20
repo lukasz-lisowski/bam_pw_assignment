@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { ContactUsForm } from '../types/types';
 
 export const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
@@ -49,8 +49,8 @@ export class ContactUsPage {
     await this.submitButton.click();
   }
 
-  async errorMessageVisible(): Promise<boolean> {
-    return (await this.errorMessage.count()) > 0;
+  async errorMessageVisible(): Promise<void> {
+    expect((await this.errorMessage.count()) > 0).toBeTruthy();
   }
 
   async refreshPage(): Promise<void> {

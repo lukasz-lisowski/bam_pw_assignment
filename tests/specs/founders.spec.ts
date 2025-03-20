@@ -2,7 +2,6 @@ import { test } from '../fixtures/base';
 
 test.describe('founders page', () => {
   test('should find founders on Leadership page', async ({ landingPage, leadershipPage }) => {
-    test.slow();
     await landingPage.open();
 
     await test.step('landing page hero section', async () => {

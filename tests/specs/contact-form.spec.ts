@@ -42,7 +42,6 @@ const data_negative: ContactUsForm[] = [
 
 test.describe('contact us form', () => {
   test('should find founders on Leadership page', async ({ landingPage, contactUsPage }) => {
-    test.slow();
     await landingPage.open();
 
     await test.step('landing page', async () => {
@@ -62,7 +61,7 @@ test.describe('contact us form', () => {
         await contactUsPage.fillOutForm(data);
         await contactUsPage.submitForm();
 
-        expect(contactUsPage.errorMessageVisible()).toBeTruthy();
+        await contactUsPage.errorMessageVisible();
 
         await contactUsPage.refreshPage();
       }
