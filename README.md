@@ -42,13 +42,19 @@ npx playwright show-report
 
 ### 1. Navigation scenario
 
-- **Test steps:** Navigate to "Locations" page
+- **Test steps:**
+  - Navigate to "Locations" page
+  - Find "Locations" section
+  - Read `aria` attributes of the section
 - **Expected result:** result matches structure and content of baseline aria snapshot
 - **Spec file:** `locations.spec.ts`
 
 ### 2. Business Infrastructure scenario
 
-- **Test steps:** Navigate to "Business Infrastructure" page
+- **Test steps:**
+  - Navigate to "Business Infrastructure" page
+  - Find "Business Infrastructure" section
+  - Read `aria` attributes of the section
 - **Expected result:** result matches structure and content of baseline aria snapshot
 - **Spec file:** `business-infrastructure.spec.ts`
 
