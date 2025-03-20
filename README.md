@@ -1,5 +1,7 @@
 # Playwright assignment
 
+## Installation and execution instructions
+
 ### Prerequisites:
 
 NodeJS version 18.x and upwards.
@@ -30,8 +32,52 @@ npx playwright test
 npx playwright test --ui
 ```
 
-### Generating HTML test report
+### Generating HTML test report:
 
 ```sh
 npx playwright show-report
 ```
+
+## Additional scenarios
+
+### 1. Navigation scenario
+
+- **Test steps:** Navigate to "Locations" page
+- **Expected result:** result matches structure and content of baseline aria snapshot
+- **Spec file:** `locations.spec.ts`
+
+## Solution
+
+- This project file runs tests against browser engines:
+  - chromium
+  - webkit
+  - firefox (gecko)
+- Resolution is set to 1920x1080.
+- Tests run in parallel and, by default in `headless` mode.
+- Source code is statically checked against standard `eslint` rules.
+- Source code is formatted against configurable rules kept in `.prettierrc`.
+- Elements timeout is cinfigured in `.env` file.
+- Solution is build around Page Object Model to improve readability and maintanability.
+- Custom types are used to improve code readability and maintainability.
+- Test report is generated in HTML format.
+
+## Folder structure
+
+```
+tests/
+├── fixtures/
+│   └── base.ts
+├── pages/
+│   ├── contact-us.page.ts
+│   └── landing.page.ts
+├── specs/
+│   ├── contact-form.spec.ts
+│   └── locations.spec.ts
+└── types/
+    └── types.ts
+```
+
+- `fixtures` - contains reusable fixtures for tests.
+- `pages` - contains page objects.
+- `specs` - contains test scenarios.
+- `types` - contains custom types (in this case only data for _Contact Us_ form).

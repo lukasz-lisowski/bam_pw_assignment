@@ -8,6 +8,7 @@ export class LandingPage {
   readonly main: Locator;
   readonly aboutUs: Locator;
   readonly leadershipLink: Locator;
+  readonly locationsLink: Locator;
   readonly cookieConsentBanner: Locator;
   readonly contactUs: Locator;
 
@@ -16,6 +17,7 @@ export class LandingPage {
     this.main = this.page.getByRole('main');
     this.aboutUs = this.page.getByLabel('Header').getByRole('link', { name: 'About Us' });
     this.leadershipLink = this.page.getByLabel('Header').getByRole('link', { name: 'Leadership' });
+    this.locationsLink = this.page.getByLabel('Header').getByRole('link', { name: 'Locations' });
     this.cookieConsentBanner = this.page.getByRole('button', { name: 'Accept cookies' });
     this.contactUs = this.page.getByRole('link', { name: 'Contact Us', exact: true });
   }
@@ -37,10 +39,14 @@ export class LandingPage {
   }
 
   async navigateToLeadershipPage(): Promise<void> {
-    await this.aboutUs.waitFor(ELEMENT_TIMEOUT);
-
     await this.aboutUs.hover().then(async () => {
       await this.leadershipLink.click();
+    });
+  }
+
+  async navigateToLocationsPage(): Promise<void> {
+    await this.aboutUs.hover().then(async () => {
+      await this.locationsLink.click();
     });
   }
 

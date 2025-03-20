@@ -1,0 +1,156 @@
+export const locations_page_aria_snapshot = `
+- link "Aalborg Aalborg Balyasny Management (Denmark) ApS Skibbrogade 3, 3. TV. 9000 Aalborg Denmark +45 70716570":
+  - img "Aalborg"
+  - heading "Aalborg" [level=3]
+  - paragraph: Balyasny Management (Denmark) ApS
+  - paragraph: Skibbrogade 3, 3. TV.
+  - paragraph: "9000"
+  - paragraph: Aalborg
+  - paragraph: Denmark
+  - text: +45 70716570
+- link "Austin Austin Balyasny Asset Management L.P. 303 Colorado Street Suite 1900 Austin TX 78701 +1 737 218 5810":
+  - img "Austin"
+  - heading "Austin" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 303 Colorado Street
+  - paragraph: Suite 1900
+  - paragraph: Austin
+  - paragraph: TX 78701
+  - text: +1 737 218 5810
+- link "Boston Boston Balyasny Asset Management L.P. 500 Boylston St 12th Floor Boston MA 02116 +1 857 287 3200":
+  - img "Boston"
+  - heading "Boston" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 500 Boylston St
+  - paragraph: 12th Floor
+  - paragraph: Boston
+  - paragraph: MA 02116
+  - text: +1 857 287 3200
+- link "Chicago Chicago Balyasny Asset Management L.P. 444 W. Lake Street 50th Floor Chicago IL 60606 +1 312 499 2999":
+  - img "Chicago"
+  - heading "Chicago" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 444 W. Lake Street
+  - paragraph: 50th Floor
+  - paragraph: Chicago
+  - paragraph: IL 60606
+  - text: +1 312 499 2999
+- link "Copenhagen Copenhagen Balyasny Management (Denmark) ApS Nicolai Eigtveds Gade 8 1402 Copenhagen Denmark +45 70716570":
+  - img "Copenhagen"
+  - heading "Copenhagen" [level=3]
+  - paragraph: Balyasny Management (Denmark) ApS
+  - paragraph: Nicolai Eigtveds Gade 8
+  - paragraph: "1402"
+  - paragraph: Copenhagen
+  - paragraph: Denmark
+  - text: +45 70716570
+- link "Dubai Dubai Balyasny Asset Management (Middle East) Limited 312 Al Mustaqbal St ICD Brookfield Place Unit 44-02, 44th Floor, Dubai International Financial Centre Dubai United Arab Emirates +971 4 410 7529":
+  - img "Dubai"
+  - heading "Dubai" [level=3]
+  - paragraph: Balyasny Asset Management (Middle East) Limited
+  - paragraph: 312 Al Mustaqbal St
+  - paragraph: ICD Brookfield Place
+  - paragraph: Unit 44-02, 44th Floor, Dubai International Financial Centre
+  - paragraph: Dubai
+  - paragraph: United Arab Emirates
+  - text: +971 4 410 7529
+- link "Greenwich Greenwich Balyasny Asset Management L.P. 1 Fawcett Place 2nd Floor Greenwich CT 06830 +1 203 340 8050":
+  - img "Greenwich"
+  - heading "Greenwich" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 1 Fawcett Place
+  - paragraph: 2nd Floor
+  - paragraph: Greenwich
+  - paragraph: CT 06830
+  - text: +1 203 340 8050
+- link "Hong Kong Hong Kong Balyasny Asset Management (Hong Kong) Limited 41st Floor Two Exchange Square 8 Connaught Place Central Hong Kong Hong Kong +852 3965 2688":
+  - img "Hong Kong"
+  - heading "Hong Kong" [level=3]
+  - paragraph: Balyasny Asset Management (Hong Kong) Limited
+  - paragraph: 41st Floor Two Exchange Square
+  - paragraph: 8 Connaught Place Central Hong Kong
+  - paragraph: Hong Kong
+  - text: +852 3965 2688
+- link "Houston Houston Balyasny Asset Management L.P. 945 Bunker Hill Rd Suite 600 Houston TX 77024 +1 281 605 3000":
+  - img "Houston"
+  - heading "Houston" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 945 Bunker Hill Rd
+  - paragraph: Suite 600
+  - paragraph: Houston
+  - paragraph: TX 77024
+  - text: +1 281 605 3000
+- link "London London Balyasny Asset Management (UK) LLP 23 King Street 4th Floor London SW1Y 6QY England +44 20 7149 0000":
+  - img "London"
+  - heading "London" [level=3]
+  - paragraph: Balyasny Asset Management (UK) LLP
+  - paragraph: 23 King Street
+  - paragraph: 4th Floor
+  - paragraph: London
+  - paragraph: SW1Y 6QY
+  - paragraph: England
+  - text: +44 20 7149 0000
+- link "Miami Miami Balyasny Asset Management L.P. 1450 Brickell Ave. Suite 2000 Miami FL 33131 +1 305 507 3557":
+  - img "Miami"
+  - heading "Miami" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 1450 Brickell Ave.
+  - paragraph: Suite 2000
+  - paragraph: Miami
+  - paragraph: FL 33131
+  - text: +1 305 507 3557
+- link "New York New York Balyasny Asset Management L.P. 767 5th Avenue 35th Floor New York NY 10153 +1 212 808 2300":
+  - img "New York"
+  - heading "New York" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 767 5th Avenue
+  - paragraph: 35th Floor
+  - paragraph: New York
+  - paragraph: NY 10153
+  - text: +1 212 808 2300
+- link "San Francisco San Francisco Balyasny Asset Management L.P. 101 California Street Suite 4600 San Francisco CA 94111 +1 415 230 5000":
+  - img "San Francisco"
+  - heading "San Francisco" [level=3]
+  - paragraph: Balyasny Asset Management L.P.
+  - paragraph: 101 California Street
+  - paragraph: Suite 4600
+  - paragraph: San Francisco
+  - paragraph: CA 94111
+  - text: +1 415 230 5000
+- 'link "Singapore Singapore Balyasny Asset Management (Singapore) PTE. LTD. CapitaGreen #21-01/02/03 138 Market Street Singapore Singapore +65 6914 2500"':
+  - img "Singapore"
+  - heading "Singapore" [level=3]
+  - paragraph: Balyasny Asset Management (Singapore) PTE. LTD.
+  - paragraph: "CapitaGreen #21-01/02/03"
+  - paragraph: 138 Market Street
+  - paragraph: Singapore
+  - paragraph: Singapore
+  - text: +65 6914 2500
+- link "Tokyo Tokyo Balyasny Asset Management (Japan) Limited Marunouchi Kitaguchi Building 9F 1-6-5 Marunouchi, Chiyoda-ku Tokyo 100-0005 Japan +81 50 1744 4774":
+  - img "Tokyo"
+  - heading "Tokyo" [level=3]
+  - paragraph: Balyasny Asset Management (Japan) Limited
+  - paragraph: Marunouchi Kitaguchi Building 9F
+  - paragraph: 1-6-5 Marunouchi, Chiyoda-ku
+  - paragraph: Tokyo 100-0005
+  - paragraph: Japan
+  - text: +81 50 1744 4774
+- link "Toronto Toronto Balyasny Asset Management (Canada) ULC 81 Bay Street STE 4500 Toronto ON M5J 0E7 Canada +1 437 826 0240":
+  - img "Toronto"
+  - heading "Toronto" [level=3]
+  - paragraph: Balyasny Asset Management (Canada) ULC
+  - paragraph: 81 Bay Street
+  - paragraph: STE 4500
+  - paragraph: Toronto
+  - paragraph: ON M5J 0E7
+  - paragraph: Canada
+  - text: +1 437 826 0240
+- link "Warsaw Warsaw Balyasny Operations (Warsaw) SP.Z.O.O Prosta 20 6th Floor, Suite 126 Warsaw 00-850 Poland +44 207 149 0000":
+  - img "Warsaw"
+  - heading "Warsaw" [level=3]
+  - paragraph: Balyasny Operations (Warsaw) SP.Z.O.O
+  - paragraph: Prosta 20
+  - paragraph: 6th Floor, Suite 126
+  - paragraph: Warsaw 00-850
+  - paragraph: Poland
+  - text: +44 207 149 0000`;
