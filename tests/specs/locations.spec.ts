@@ -1,7 +1,7 @@
 import { expect, test } from '../fixtures/base';
 
 test.describe('locations page', () => {
-  test('should find founders on Leadership page', async ({ landingPage, locationsPage }) => {
+  test('should find all office locations on Locations page', async ({ landingPage, locationsPage }) => {
     await landingPage.open();
 
     await test.step('landing page hero section', async () => {

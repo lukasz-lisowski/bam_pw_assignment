@@ -51,7 +51,7 @@ const data_negative: ContactUsForm[] = [
 ];
 
 test.describe('contact us form', () => {
-  test('should find founders on Leadership page', async ({ landingPage, contactUsPage }) => {
+  test('should be able to fill in Contact Us form page', async ({ landingPage, contactUsPage }) => {
     await landingPage.open();
 
     await test.step('landing page', async () => {
@@ -63,6 +63,10 @@ test.describe('contact us form', () => {
     await test.step('navigate to Contact Us', async () => {
       await landingPage.navigateToContactUsPage();
     });
+
+    // In order to not spam the contact form, we will only test the negative cases
+    // and the wrong email format case
+    // no positive scenario is tested here
 
     await test.step('should fail with wrong email format', async () => {
       await contactUsPage.verifyPageLoaded();
