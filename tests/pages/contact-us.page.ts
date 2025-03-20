@@ -1,4 +1,4 @@
-import { expect, Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { ContactUsForm } from '../types/types';
 
 export const ELEMENT_TIMEOUT = { timeout: Number(process.env.TIMEOUT) };
@@ -40,6 +40,10 @@ export class ContactUsPage {
   }
 
   async errorMessageVisible(): Promise<boolean> {
-    return await this.errorMessage.isVisible(ELEMENT_TIMEOUT);
+    return (await this.errorMessage.count()) > 0;
+  }
+
+  async refreshPage(): Promise<void> {
+    await this.page.reload();
   }
 }

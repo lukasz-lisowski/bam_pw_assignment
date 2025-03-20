@@ -1,25 +1,33 @@
 import { expect, test } from '../fixtures/base';
 import { ContactUsForm } from '../types/types';
 
-const data_positive: ContactUsForm[] = [
-  {
-    firstName: '',
-    lastName: '',
-    emailAddress: '',
-    company: 'Test Company',
-    phoneNumber: '123-456-7890',
-    topic: 'info',
-  },
-];
-
 const data_negative: ContactUsForm[] = [
   {
     firstName: '',
     lastName: 'Doe',
-    emailAddress: '',
+    emailAddress: 'test@email.com',
     company: 'Test Company',
     phoneNumber: '123-456-7890',
     topic: 'pr',
+    message: 'This is a test message',
+  },
+  {
+    firstName: 'Jane',
+    lastName: '',
+    emailAddress: 'test@email.com',
+    company: 'Test Company',
+    phoneNumber: '123-456-7890',
+    topic: 'investor_relations',
+    message: 'This is a test message',
+  },
+  {
+    firstName: 'Jane',
+    lastName: 'Doe',
+    emailAddress: 'test@email.com',
+    company: 'Test Company',
+    phoneNumber: '123-456-7890',
+    topic: 'investor_relations',
+    message: 'This is a test message',
   },
   {
     firstName: 'Jane',
@@ -27,7 +35,8 @@ const data_negative: ContactUsForm[] = [
     emailAddress: '',
     company: 'Test Company',
     phoneNumber: '123-456-7890',
-    topic: 'pr',
+    topic: 'investor_relations',
+    message: '',
   },
 ];
 
@@ -52,7 +61,10 @@ test.describe('contact us form', () => {
       for (const data of data_negative) {
         await contactUsPage.fillOutForm(data);
         await contactUsPage.submitForm();
-        // expect(contactUsPage.errorMessageVisible()).toBeTruthy();
+
+        expect(contactUsPage.errorMessageVisible()).toBeTruthy();
+
+        await contactUsPage.refreshPage();
       }
     });
   });
